@@ -12,14 +12,7 @@ const DATABASE_URL = process.env.NODE_ENV === 'test'
 
 // instantiate our sequelize connection to our database
 
-const sequelizeDatabase = new Sequelize(DATABASE_URL, {
-    dialectOptions: {
-        ssl: {
-            require: true,
-            rejectUnauthorized: false,
-        }
-    }
-});
+const sequelizeDatabase = new Sequelize(DATABASE_URL);
 
 // create a food model with our schema 
 

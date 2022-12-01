@@ -13,13 +13,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(foodRouter);
-app.use('*', notFound);
-app.use(errorHandler);
 
 app.get('/', (req, res, next) => {
     res.status(200).send('Hello World');
 });
 
+app.use('*', notFound);
+app.use(errorHandler);
 
 function start(){
     app.listen(PORT, () => console.log('listening on port', PORT))
