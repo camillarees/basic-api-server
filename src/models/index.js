@@ -1,7 +1,7 @@
 'use strict';
 
 require('dotenv').config();
-const { Sequelize, Datatypes } = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 const foodSchema = require('./food.schema');
 
 // 'postgres://localhost:5432/basic-api-server'
