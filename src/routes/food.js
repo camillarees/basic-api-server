@@ -15,9 +15,10 @@ router.get('/food', async (req, res, next) => {
 }
 });
 
-router.get('/food:id', async (req, res, next) => {
+router.get('/food/:id', async (req, res, next) => {
     try{
-        const chosenFood = await FoodModel.findOne({where:{id: req.params.id}})
+        const { id } = req.params;
+        const chosenFood = await FoodModel.findAll({where:{ id }})
         res.status(200).send(chosenFood);
     } catch(e){
         next(e);
@@ -33,20 +34,19 @@ res.status(200).send(newFood);
     }
 });
 
-router.put('/food', async (req, res, next) => {
+router.put('/food/:id', async (req, res, next) => {
     try {
-        const foodUpdate = await FoodModel.update({ text: req.body.text}, {where: {id: req.query.id}})
-        let updatedFood = await FoodModel.findOne({id: req.query.id})
-        res.status(200).send(updatedFood)
+        const updatedFood = await FoodModel.update(req.body, {where: {id: req.params.id}})
+        res.status(200).send(updatedFood);
     } catch(e) {
         next(e);
     }
 })
 
-router.delete('/food:id', async (req, res, next) => {
+router.delete('/food/:id', async (req, res, next) => {
     try {
-    const foodDelete = await FoodModel.destroy({ where:{ id: req.query.id}})
-    res.status(200).send(foodDelete);
+    await FoodModel.destroy({ where:{ id: req.params.id}})
+    res.status(200).send('item deleted');
     } catch(e){
         next(e);
     } 

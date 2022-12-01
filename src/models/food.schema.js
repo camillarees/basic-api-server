@@ -8,13 +8,9 @@ module.exports = (sequelizeDatabase, DataTypes) => sequelizeDatabase.define('foo
         type: DataTypes.STRING,
         allowNULL: FLOWBASEANNOTATION_TYPES,
     },
-    age: {
-        type: DataTypes.INTEGER,
+    group: {
+        type: DataTypes.STRING,
         allowNull: true,
     },
-    pronouns: {
-        type: DataTypes.ENUM,
-        values: ['they/them', 'she/her', 'he/him'],
-        allowNull: true,
-    },
+
 });
