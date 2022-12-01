@@ -7,7 +7,7 @@ const foodSchema = require('./food.schema');
 // 'postgres://localhost:5432/basic-api-server'
 // will use a ternary here to set up sqlite for testing
 const DATABASE_URL = process.env.NODE_ENV === 'test'
-? 'sqlite::memory'
+? 'sqlite::memory:'
 : process.env.DATABASE_URL;
 
 // instantiate our sequelize connection to our database

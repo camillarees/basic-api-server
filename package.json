@@ -1,28 +1,4 @@
 {
-  "name": "basic-api-server",
-  "version": "1.0.0",
-  "description": "## For React Applications",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "NODE_ENV=test jest --verbose --coverage",
-    "test-watch": "NODE_ENV=test jest --watchAll --verbose --coverage",
-    "db:config": "sequelize init:config",
-    "db:create": "sequelize db:create"
-
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/camillarees/basic-api-server.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rkgallaway/basic-api-server/issues"
-  },
-  "homepage": "https://github.com/camillarees/basic-api-server#readme",
-  
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
