@@ -1,12 +1,9 @@
 'use strict';
 
-const { FLOWBASEANNOTATION_TYPES } = require("@babel/types");
-const { sequelizeDatabase } = require(".");
-
 module.exports = (sequelizeDatabase, DataTypes) => sequelizeDatabase.define('food', {
     name: {
         type: DataTypes.STRING,
-        allowNULL: FLOWBASEANNOTATION_TYPES,
+        allowNULL: true,
     },
     group: {
         type: DataTypes.STRING,

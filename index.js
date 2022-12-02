@@ -8,4 +8,4 @@ sequelizeDatabase.sync()
     console.log('Successful Connection!');
     start();
 })
-.catch(e => console.error(e));
+.catch(e => console.error(e));g
